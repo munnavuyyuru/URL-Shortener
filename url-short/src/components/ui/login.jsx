@@ -16,7 +16,11 @@ import useFetch from "@/hooks/use-fetch";
 import { login } from "@/db/apiAuth";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { UrlState } from "@/context";
+import supabaseUrl from "@/db/supabase";
+import supabaseKey from "@/db/supabase";
 
+/* console.log("Supabase URL:", supabaseUrl);
+console.log("Supabase key:", supabaseKey); */
 const Login = () => {
   const [errors, setErrors] = useState([]);
 

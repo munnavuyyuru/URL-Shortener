@@ -1,4 +1,5 @@
 import supabase from "./supabase";
+import supabaseUrl from "@/db/supabase";
 
 export async function login({ email, password }) {
   const { data, error } = await supabase.auth.signInWithPassword({
@@ -41,6 +42,6 @@ export async function signup({ name, email, password, profile_pic }) {
   });
 
   if (error) throw new Error(error.message);
-
+  console.log("Signup successful, data:", data);
   return data;
 }
