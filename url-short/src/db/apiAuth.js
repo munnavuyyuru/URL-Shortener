@@ -21,6 +21,14 @@ export async function getCurrentUser() {
   return session.session?.user;
 }
 
+/* export async function getCurrentUser() {
+  const { data: user, error } = await supabase.auth.getUser();
+
+  if (error) throw new Error(error.message);
+
+  return user || null;
+} */
+
 export async function signup({ name, email, password, profile_pic }) {
   const fileName = `dp-${name.split(" ").join("-")}-${Math.random()}`;
 
@@ -44,4 +52,9 @@ export async function signup({ name, email, password, profile_pic }) {
   if (error) throw new Error(error.message);
   console.log("Signup successful, data:", data);
   return data;
+}
+
+export async function logout() {
+  const { error } = await supabase.auth.signOut();
+  if (error) throw new Error(error.message);
 }

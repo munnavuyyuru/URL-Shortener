@@ -44,7 +44,11 @@ const LandingPage = () => {
         className="w-full my-11 md:px-11 ml-6"
       />
 
-      <Accordion type="multiple" collapsible className=" ml-2 w-full md:px-11">
+      <Accordion
+        type="multiple"
+        collapsible="ture"
+        className=" ml-2 w-full md:px-11"
+      >
         <AccordionItem value="item-1">
           <AccordionTrigger>
             How does the Trimrr URL shortener works?

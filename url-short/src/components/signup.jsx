@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Input } from "./input";
-import { Button } from "./button";
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
 import Error from "./error";
 import {
   Card,
