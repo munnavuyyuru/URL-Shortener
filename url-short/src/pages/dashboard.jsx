@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Filter } from "lucide-react";
 import Error from "@/components/error";
 import useFetch from "@/hooks/use-fetch";
+import CreateLink from "@/components/create-link";
 import { getUrls } from "@/db/apiUrls";
 import { UrlState } from "@/context";
 import { getClicksForUrls } from "@/db/apiClicks";
@@ -70,7 +71,7 @@ const Dashboard = () => {
 
       <div className="flex justify-between">
         <h1 className="text-4xl font-extrabold">My Links</h1>
-        <Button>Create Link</Button>
+        <CreateLink />
       </div>
 
       <div className="relative ">
@@ -84,7 +85,7 @@ const Dashboard = () => {
       </div>
       {error && <Error message={error?.message} />}
       {(filteredUrls || []).map((url, i) => {
-        return <LinkCard key={i} url={url} fetchUrl={fnUrls} />;
+        return <LinkCard key={i} url={url} fetchUrls={fnUrls} />;
       })}
     </div>
   );
